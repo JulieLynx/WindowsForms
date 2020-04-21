@@ -151,6 +151,11 @@
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Creative-Freedom-Free-Funktional-04-Save.ico" />
+    <Image Include="Custom-Icon-Design-Mono-General-2-Document.ico" />
+    <Image Include="Iconshock-Aquatic-Marine-star.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
