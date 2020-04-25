@@ -9,5 +9,7 @@ https://www.youtube.com/watch?v=SfGuIVzE_Os&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4
 https://www.youtube.com/watch?v=3tIqpEmWMLI&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=6
 https://www.youtube.com/watch?v=H4s55GgAg0I&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=7
 
+---------------------------------------------------------------------------------------------------------
+
 DONE:
 В текстовое поле вводится имя пользователя, и после нажатия на Enter появляется MessageBox, в котором программа приветствует пользователя, например: "Привет Вася ;-).";
