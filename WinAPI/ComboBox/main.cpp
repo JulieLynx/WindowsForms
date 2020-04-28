@@ -33,7 +33,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		SendMessage(hwnd, WM_SETICON, 0, (LPARAM)hIcon);
 
 		hCombo = GetDlgItem(hwnd, IDC_COMBO1);
-		for (int i = 0; i < sizeof(str)/sizeof(*str) ; i++)
+		for (int i = 0; i < sizeof(str) / sizeof(*str); i++)
 		{
 			SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)str[i]);
 		}
@@ -55,20 +55,30 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 			if (HIWORD(wParam) == CBN_SELENDOK)
 			{
-				const int SIZE = 255;
+				/*const int SIZE = 255;
 				CHAR buffer[SIZE]{};
 				CHAR message[SIZE] = "Вы выбрали: ";
 				int i = SendMessage(hCombo, CB_GETCURSEL, 0, 0);
 				SendMessage(hCombo, CB_GETLBTEXT, i, (LPARAM)buffer);
 
 				strcat_s(message, SIZE, buffer);
-				MessageBox(hwnd, message, "Info", MB_OK | MB_ICONINFORMATION);
+				MessageBox(hwnd, message, "Info", MB_OK | MB_ICONINFORMATION);*/
 			}
 		}
 		break;
 		case IDOK:
-			MessageBox(hwnd, "Hello", "Hi", MB_OK);
-			break;
+		{
+			//MessageBox(hwnd, "Hello", "Hi", MB_OK);
+			const int SIZE = 255;
+			CHAR buffer[SIZE]{};
+			CHAR message[SIZE] = "Вы выбрали: ";
+			int i = SendMessage(hCombo, CB_GETCURSEL, 0, 0);
+			SendMessage(hCombo, CB_GETLBTEXT, i, (LPARAM)buffer);
+
+			strcat_s(message, SIZE, buffer);
+			MessageBox(hwnd, message, "Info", MB_OK | MB_ICONINFORMATION);
+		}
+		break;
 		case IDCANCEL:
 			EndDialog(hwnd, 0);
 			break;
