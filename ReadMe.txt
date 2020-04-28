@@ -1,6 +1,10 @@
 https://github.com/okovtun/WindowsApplications34v
 
 TODO:
+1. Добавить значок в SimpleWindow;
+2. Обработать File->Exit и Help->About, последнее сделать диалоговым окном;
+
+DONE:
 1. MessageBox с выбранным пунктом ComboBox, должен появляться при нажатии на кнопку OK, а не при выборе;
 2. Создать диалоговое окно с элементом ListBox, добавить в него те же пункты (строки) и выбранну строку отобразить в MessageBox при нажатии на кнопку OK. Работа с ListBox ОЧЕНЬ ПОХОЖА на ComboBox;
 
