@@ -7,6 +7,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 LRESULT CALLBACK AboutDlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 BOOL LoadTextFileToEdit(HWND hEdit, LPCTSTR lpszFileName);
+BOOL SaveTextFileFromEdit(HWND hEdit, LPCTSTR lpszFileName);
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -143,13 +144,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	case WM_CLOSE:
-		if (MessageBox(hwnd, "Вы действительно хотите закрыть окно?", "Че, реально?", MB_YESNO | MB_ICONQUESTION) == IDYES)
-		{
-			DestroyWindow(hwnd);
-		}
-		break;
+		//if (MessageBox(hwnd, "Вы действительно хотите закрыть окно?", "Че, реально?", MB_YESNO | MB_ICONQUESTION) == IDYES)
+	{
+	}
+	DestroyWindow(hwnd);
+	break;
 	case WM_DESTROY:
-		MessageBox(hwnd, "Лучше б двери закрыли", "Info", MB_OK);
+		//MessageBox(hwnd, "Лучше б двери закрыли", "Info", MB_OK);
 		PostQuitMessage(0);
 		break;
 	default:return DefWindowProc(hwnd, uMsg, wParam, lParam);
@@ -209,4 +210,10 @@ BOOL LoadTextFileToEdit(HWND hEdit, LPCTSTR lpszFileName)
 		CloseHandle(hFile);
 	}
 	return bSuccess;
+}
+BOOL SaveTextFileFromEdit(HWND hEdit, LPCTSTR lpszFileName)
+{
+	BOOL bSuccess = FALSE;
+	HANDLE hFile = CreateFile(lpszFileName, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+
 }

@@ -4,6 +4,10 @@ Video:
 https://www.youtube.com/watch?v=_U_3YYxsZlI&list=PLFkgzpHG4CYWH6EG51V_KSkuYRM4jq0oV&index=2&t=0s
 
 TODO:
+1. Вынести создание окна открытия файла в отдельную функцию.
+2. Распределить функции по файлам.
+
+DONE:
 1. Добавить значок в SimpleWindow;
 2. Обработать File->Exit и Help->About, последнее сделать диалоговым окном;
 
