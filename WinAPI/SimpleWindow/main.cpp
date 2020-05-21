@@ -16,10 +16,22 @@ VOID DoFileOpen(HWND hwnd);
 VOID DoFileSaveAs(HWND hwnd);
 
 BOOL FileChanged(HWND hEdit);
-VOID WatchChanges(HWND hwnd, void* Action)
+/*VOID WatchChanges(HWND hwnd, void* Action)
 {
-	
-}
+	if (FileChanged(GetDlgItem(hwnd, IDC_EDIT)))
+	{
+		switch (MessageBox(hwnd, "Сохранить изменения в файле?", "Не так быстро...", MB_YESNOCANCEL | MB_ICONQUESTION))
+		{
+		case IDYES: SendMessage(hwnd, WM_COMMAND, ID_FILE_SAVE, 0);
+		case IDNO: Action(hwnd);
+		case IDCANCEL: break;
+		}
+	}
+	else
+	{
+		(*Action)(hwnd);
+	}
+}*/
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nCmdShow)
 {
