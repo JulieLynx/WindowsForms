@@ -16,6 +16,10 @@ VOID DoFileOpen(HWND hwnd);
 VOID DoFileSaveAs(HWND hwnd);
 
 BOOL FileChanged(HWND hEdit);
+VOID WatchChanges(HWND hwnd, void* Action)
+{
+	
+}
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -117,7 +121,19 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 		case ID_FILE_OPEN:
 		{
-			DoFileOpen(hwnd);
+			/*if (FileChanged(GetDlgItem(hwnd, IDC_EDIT)))
+			{
+				switch (MessageBox(hwnd, "Сохранить изменения в файле?", "Не так быстро...", MB_YESNOCANCEL | MB_ICONQUESTION))
+				{
+				case IDYES: SendMessage(hwnd, WM_COMMAND, ID_FILE_SAVE, 0);
+				case IDNO: DoFileOpen(hwnd);
+				case IDCANCEL: break;
+				}
+			}
+			else
+			{
+				DoFileOpen(hwnd);
+			}*/
 		}
 		break;
 		case ID_FILE_SAVE:
@@ -208,7 +224,7 @@ BOOL LoadTextFileToEdit(HWND hEdit, LPCTSTR lpszFileName)
 		DWORD dwFileSize = GetFileSize(hFile, NULL);
 		if (dwFileSize != UINT_MAX)
 		{
-			if(lpszFileText)
+			if (lpszFileText)
 				GlobalFree(lpszFileText);
 			lpszFileText = (LPSTR)GlobalAlloc(GPTR, dwFileSize + 1);
 			ZeroMemory(lpszFileText, dwFileSize + 1);
@@ -235,7 +251,7 @@ BOOL SaveTextFileFromEdit(HWND hEdit, LPCTSTR lpszFileName)
 		DWORD dwTextLength = GetWindowTextLength(hEdit);
 		if (dwTextLength)
 		{
-			if(lpszFileText)
+			if (lpszFileText)
 				GlobalFree(lpszFileText);
 			lpszFileText = (LPSTR)GlobalAlloc(GPTR, dwTextLength + 1);
 			if (lpszFileText)
