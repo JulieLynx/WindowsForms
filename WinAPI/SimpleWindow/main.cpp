@@ -133,7 +133,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 		case ID_FILE_OPEN:
 		{
-			/*if (FileChanged(GetDlgItem(hwnd, IDC_EDIT)))
+			if (FileChanged(GetDlgItem(hwnd, IDC_EDIT)))
 			{
 				switch (MessageBox(hwnd, "Сохранить изменения в файле?", "Не так быстро...", MB_YESNOCANCEL | MB_ICONQUESTION))
 				{
@@ -145,7 +145,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			else
 			{
 				DoFileOpen(hwnd);
-			}*/
+			}
 		}
 		break;
 		case ID_FILE_SAVE:
