@@ -63,16 +63,6 @@ namespace Introduction.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1509466206169697201 {
-            get {
-                object obj = ResourceManager.GetObject("1509466206169697201", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Danieledesantis_Playstation_Flat_Playstation_cross_black_and_white__1_ {
             get {
                 object obj = ResourceManager.GetObject("Danieledesantis-Playstation-Flat-Playstation-cross-black-and-white (1)", resourceCulture);
@@ -96,26 +86,6 @@ namespace Introduction.Properties {
         internal static System.Drawing.Bitmap playstation_cross_black_and_white_icon {
             get {
                 object obj = ResourceManager.GetObject("playstation-cross-black-and-white-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sddf {
-            get {
-                object obj = ResourceManager.GetObject("sddf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sdfghjhk {
-            get {
-                object obj = ResourceManager.GetObject("sdfghjhk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

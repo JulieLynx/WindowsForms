@@ -121,19 +121,19 @@
   <data name="playstation-cross-black-and-white-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\playstation-cross-black-and-white-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1509466206169697201" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="1509466206169697201" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\1509466206169697201.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
   <data name="fsdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\fsdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Danieledesantis-Playstation-Flat-Playstation-cross-black-and-white (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Danieledesantis-Playstation-Flat-Playstation-cross-black-and-white (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sdfghjhk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="sdfghjhk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sdfghjhk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sddf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sddf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  </data>-->
 </root>
