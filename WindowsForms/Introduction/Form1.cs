@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Introduction
 {
@@ -15,7 +16,16 @@ namespace Introduction
 		Font font_default;
 		public Form1()
         {
+
+            // int resol = Convert.ToInt32(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size);
+
+            //Location = new Point(Convert.ToInt32(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size) - 500, 0);
+            Location = new Point(1000, 0);
+
+            TopMost = true;
+
             InitializeComponent();
+
 			font_default = cb_showdate.Font;
 		}
 
@@ -44,7 +54,7 @@ namespace Introduction
 			
 			//font_default.
 			this.cb_showdate.Font = new Font(font_default, FontStyle.Bold);
-			this.cb_showdate.ForeColor = Color.Red;
+			this.cb_showdate.ForeColor = Color.Purple;
 		}
 		private void cb_showdate_MouseLeave(object sender, EventArgs e)
 		{
@@ -57,5 +67,51 @@ namespace Introduction
 
 		}
 
-	}
+        private void lb_date_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        const string name = "T.T";
+        public bool SetAutorunValue(bool autorun)
+        {
+            string ExePath = System.Windows.Forms.Application.ExecutablePath;
+            RegistryKey reg;
+            reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+            try
+            {
+                if (autorun)
+                    reg.SetValue(name, ExePath);
+                else
+                    reg.DeleteValue(name);
+
+                reg.Close();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetAutorunValue(true);
+        }
+
+        private void bt_auto_off_Click(object sender, EventArgs e)
+        {
+            SetAutorunValue(false);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
