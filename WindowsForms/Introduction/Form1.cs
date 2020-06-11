@@ -16,15 +16,14 @@ namespace Introduction
 		Font font_default;
 		public Form1()
         {
-
-            // int resol = Convert.ToInt32(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size);
-
-            //Location = new Point(Convert.ToInt32(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size) - 500, 0);
-            Location = new Point(1000, 0);
-
-            TopMost = true;
-
             InitializeComponent();
+
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - (this.Width), 0);
+            // Location = new Point(1000, 0);
+
+            //TopMost = true;
+
 
 			font_default = cb_showdate.Font;
 		}
@@ -47,6 +46,7 @@ namespace Introduction
 		private void cb_showdate_CheckedChanged(object sender, EventArgs e)
 		{
 			this.lb_date.Visible = this.cb_showdate.Checked;
+            
 		}
 
 		private void cb_showdate_MouseHover(object sender, EventArgs e)
@@ -113,5 +113,26 @@ namespace Introduction
         {
 
         }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void hideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           alwaysOnTopToolStripMenuItem.Checked = this.TopMost = this.TopMost?false:true;
+        }
     }
+    
 }
