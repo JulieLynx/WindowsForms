@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,10 +53,31 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyClockSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyClockSettings.Designer.cs">
+      <DependentUpon>MyClockSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="stopwatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stopwatch.Designer.cs">
+      <DependentUpon>stopwatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimerOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimerOff.Designer.cs">
+      <DependentUpon>TimerOff.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyClockSettings.resx">
+      <DependentUpon>MyClockSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +89,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="stopwatch.resx">
+      <DependentUpon>stopwatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimerOff.resx">
+      <DependentUpon>TimerOff.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fsdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="qwe.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

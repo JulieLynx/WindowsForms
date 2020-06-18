@@ -13,8 +13,16 @@ namespace Introduction
 {
     public partial class Form1 : Form
     {
-		Font font_default;
-		public Form1()
+        Font font_default;
+        public System.Windows.Forms.ToolStripMenuItem AlwaysOnTopToolStripMenuItem
+        {
+            get
+            {
+                return alwaysOnTopToolStripMenuItem;
+            }
+        }
+
+        public Form1()
         {
             InitializeComponent();
 
@@ -25,54 +33,54 @@ namespace Introduction
             //TopMost = true;
 
 
-			font_default = cb_showdate.Font;
-		}
+            font_default = cb_showdate.Font;
+        }
 
-		private void main_timer_Tick(object sender, EventArgs e)
-		{
-			//this.lb_time.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute;
-			this.lb_time.Text = DateTime.Now.ToLongTimeString();
-			this.lb_date.Text = DateTime.Now.ToLongDateString();
-			//if (cb_showdate.Checked)
-			//{
-			//	this.lb_date.Visible = true;
-			//}
-			//else
-			//{
-			//	this.lb_date.Visible = false;
-			//}
-		}
+        private void main_timer_Tick(object sender, EventArgs e)
+        {
+            //this.lb_time.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute;
+            this.lb_time.Text = DateTime.Now.ToLongTimeString();
+            this.lb_date.Text = DateTime.Now.ToLongDateString();
+            //if (cb_showdate.Checked)
+            //{
+            //	this.lb_date.Visible = true;
+            //}
+            //else
+            //{
+            //	this.lb_date.Visible = false;
+            //}
+        }
 
-		private void cb_showdate_CheckedChanged(object sender, EventArgs e)
-		{
-			this.lb_date.Visible = this.cb_showdate.Checked;
-            
-		}
+        private void cb_showdate_CheckedChanged(object sender, EventArgs e)
+        {
+            this.lb_date.Visible = this.cb_showdate.Checked;
 
-		private void cb_showdate_MouseHover(object sender, EventArgs e)
-		{
-			
-			//font_default.
-			this.cb_showdate.Font = new Font(font_default, FontStyle.Bold);
-			this.cb_showdate.ForeColor = Color.Purple;
-		}
-		private void cb_showdate_MouseLeave(object sender, EventArgs e)
-		{
-			this.cb_showdate.Font = new Font(font_default, FontStyle.Regular);
-			this.cb_showdate.ForeColor = Color.Black;
-		}
+        }
 
-		private void Form1_MouseLeave(object sender, EventArgs e)
-		{
+        private void cb_showdate_MouseHover(object sender, EventArgs e)
+        {
 
-		}
+            //font_default.
+            this.cb_showdate.Font = new Font(font_default, FontStyle.Bold);
+            this.cb_showdate.ForeColor = Color.Purple;
+        }
+        private void cb_showdate_MouseLeave(object sender, EventArgs e)
+        {
+            this.cb_showdate.Font = new Font(font_default, FontStyle.Regular);
+            this.cb_showdate.ForeColor = Color.Black;
+        }
+
+        private void Form1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
 
         private void lb_date_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -129,10 +137,28 @@ namespace Introduction
             this.Hide();
         }
 
-        private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
+        public void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           alwaysOnTopToolStripMenuItem.Checked = this.TopMost = this.TopMost?false:true;
+            alwaysOnTopToolStripMenuItem.Checked = this.TopMost = this.TopMost ? false : true;
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyClockSettings mcs = new MyClockSettings(this);
+            mcs.Show();
+        }
+
+        private void btn_stopwatch_Click(object sender, EventArgs e)
+        {
+            stopwatch sw = new stopwatch();
+            sw.Show();
+        }
+
+        private void btn_timer_pc_off_Click(object sender, EventArgs e)
+        {
+            TimerOff tm = new TimerOff();
+            tm.Show();
         }
     }
-    
+
 }

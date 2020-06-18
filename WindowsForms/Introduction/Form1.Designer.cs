@@ -43,6 +43,9 @@
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_stopwatch = new System.Windows.Forms.Button();
+            this.btn_timer_pc_off = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuSystemTray.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +72,7 @@
             this.lb_date.BackColor = System.Drawing.Color.Violet;
             this.lb_date.Font = new System.Drawing.Font("Segoe Print", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_date.ForeColor = System.Drawing.Color.Black;
-            this.lb_date.Location = new System.Drawing.Point(55, 134);
+            this.lb_date.Location = new System.Drawing.Point(55, 135);
             this.lb_date.Name = "lb_date";
             this.lb_date.Size = new System.Drawing.Size(91, 51);
             this.lb_date.TabIndex = 1;
@@ -144,39 +147,67 @@
             this.alwaysOnTopToolStripMenuItem,
             this.showToolStripMenuItem,
             this.hideToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.closeToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.contextMenuSystemTray.Name = "contextMenuSystemTray";
-            this.contextMenuSystemTray.Size = new System.Drawing.Size(150, 92);
+            this.contextMenuSystemTray.Size = new System.Drawing.Size(150, 114);
             // 
             // alwaysOnTopToolStripMenuItem
             // 
             this.alwaysOnTopToolStripMenuItem.Checked = true;
             this.alwaysOnTopToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // hideToolStripMenuItem
             // 
             this.hideToolStripMenuItem.Name = "hideToolStripMenuItem";
-            this.hideToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.hideToolStripMenuItem.Text = "Hide";
             this.hideToolStripMenuItem.Click += new System.EventHandler(this.hideToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // btn_stopwatch
+            // 
+            this.btn_stopwatch.Location = new System.Drawing.Point(335, 254);
+            this.btn_stopwatch.Name = "btn_stopwatch";
+            this.btn_stopwatch.Size = new System.Drawing.Size(75, 23);
+            this.btn_stopwatch.TabIndex = 7;
+            this.btn_stopwatch.Text = "stopwatch";
+            this.btn_stopwatch.UseVisualStyleBackColor = true;
+            this.btn_stopwatch.Click += new System.EventHandler(this.btn_stopwatch_Click);
+            // 
+            // btn_timer_pc_off
+            // 
+            this.btn_timer_pc_off.Location = new System.Drawing.Point(416, 254);
+            this.btn_timer_pc_off.Name = "btn_timer_pc_off";
+            this.btn_timer_pc_off.Size = new System.Drawing.Size(75, 23);
+            this.btn_timer_pc_off.TabIndex = 8;
+            this.btn_timer_pc_off.Text = "timer pc off";
+            this.btn_timer_pc_off.UseVisualStyleBackColor = true;
+            this.btn_timer_pc_off.Click += new System.EventHandler(this.btn_timer_pc_off_Click);
             // 
             // Form1
             // 
@@ -186,6 +217,8 @@
             this.BackgroundImage = global::Introduction.Properties.Resources.fsdf;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(546, 289);
+            this.Controls.Add(this.btn_timer_pc_off);
+            this.Controls.Add(this.btn_stopwatch);
             this.Controls.Add(this.bt_auto_off);
             this.Controls.Add(this.bt_auto_on);
             this.Controls.Add(this.pictureBox1);
@@ -225,6 +258,9 @@
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.Button btn_stopwatch;
+        private System.Windows.Forms.Button btn_timer_pc_off;
     }
 }
 
