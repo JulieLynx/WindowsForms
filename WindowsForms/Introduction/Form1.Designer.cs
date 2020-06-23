@@ -46,6 +46,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_stopwatch = new System.Windows.Forms.Button();
             this.btn_timer_pc_off = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuSystemTray.SuspendLayout();
             this.SuspendLayout();
@@ -209,6 +210,17 @@
             this.btn_timer_pc_off.UseVisualStyleBackColor = true;
             this.btn_timer_pc_off.Click += new System.EventHandler(this.btn_timer_pc_off_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(0, 0);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 9;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +229,7 @@
             this.BackgroundImage = global::Introduction.Properties.Resources.fsdf;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(546, 289);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.btn_timer_pc_off);
             this.Controls.Add(this.btn_stopwatch);
             this.Controls.Add(this.bt_auto_off);
@@ -261,6 +274,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.Button btn_stopwatch;
         private System.Windows.Forms.Button btn_timer_pc_off;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

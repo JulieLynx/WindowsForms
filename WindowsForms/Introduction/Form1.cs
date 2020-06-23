@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
+
+
+
 namespace Introduction
 {
     public partial class Form1 : Form
     {
+
         Font font_default;
         public System.Windows.Forms.ToolStripMenuItem AlwaysOnTopToolStripMenuItem
         {
@@ -26,6 +30,7 @@ namespace Introduction
         {
             InitializeComponent();
 
+            
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - (this.Width), 0);
             // Location = new Point(1000, 0);
