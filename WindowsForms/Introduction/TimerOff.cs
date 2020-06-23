@@ -92,6 +92,8 @@ namespace Introduction
                 }
                 if (ComboBoxAction.SelectedItem.ToString() == "Log off")
                 {
+                    if (rb_after.Checked)
+                    { h = 10; m = 10; s = 10; }
                     MessageBox.Show("yeap");
                 }
                 if (ComboBoxAction.SelectedItem.ToString() == "Suspend")

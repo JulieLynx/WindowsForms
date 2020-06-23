@@ -114,11 +114,11 @@
             this.lb_timer_pc_off.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lb_timer_pc_off.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_timer_pc_off.ForeColor = System.Drawing.Color.Black;
-            this.lb_timer_pc_off.Location = new System.Drawing.Point(61, 136);
+            this.lb_timer_pc_off.Location = new System.Drawing.Point(61, 147);
             this.lb_timer_pc_off.Name = "lb_timer_pc_off";
-            this.lb_timer_pc_off.Size = new System.Drawing.Size(76, 37);
+            this.lb_timer_pc_off.Size = new System.Drawing.Size(120, 37);
             this.lb_timer_pc_off.TabIndex = 6;
-            this.lb_timer_pc_off.Text = "timer";
+            this.lb_timer_pc_off.Text = "just wait..";
             this.lb_timer_pc_off.Visible = false;
             this.lb_timer_pc_off.Click += new System.EventHandler(this.timer_pc_off_Click);
             // 
@@ -128,9 +128,9 @@
             this.pictureBox_cancel.BackgroundImage = global::Introduction.Properties.Resources.Danieledesantis_Playstation_Flat_Playstation_cross_black_and_white__1_;
             this.pictureBox_cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_cancel.Location = new System.Drawing.Point(189, 152);
+            this.pictureBox_cancel.Location = new System.Drawing.Point(189, 147);
             this.pictureBox_cancel.Name = "pictureBox_cancel";
-            this.pictureBox_cancel.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox_cancel.Size = new System.Drawing.Size(38, 37);
             this.pictureBox_cancel.TabIndex = 7;
             this.pictureBox_cancel.TabStop = false;
             this.pictureBox_cancel.Visible = false;
