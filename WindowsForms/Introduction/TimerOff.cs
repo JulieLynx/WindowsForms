@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Runtime.InteropServices;
-//    [DllImport("user32.dll")]
-//public static extern void LockWorkStation();
+using System.Runtime.InteropServices;
 
 namespace Introduction
 {
+
+
     public partial class TimerOff : Form
     {
+        [DllImport("user32.dll")]
+        public static extern bool LockWorkStation();
         int h = 0; int m = 0; int s = 0;
         bool start = false;
         public TimerOff()
@@ -60,13 +62,6 @@ namespace Introduction
 
         private void timer_off_pc_Tick(object sender, EventArgs e)
         {
-            if (rb_in.Checked)
-            {
-                if (h == DateTime.Now.Hour && m == DateTime.Now.Minute && s == DateTime.Now.Second)
-                {
-                    MessageBox.Show("hbgvnskld;fgsdfg");
-                }
-            }
             if (rb_after.Checked)
             {
                 if (start == true)
@@ -81,31 +76,37 @@ namespace Introduction
                     this.lb_timer_pc_off.Text = (h + ":" + m + ":" + s);
                     s--;
                 }
-                if (h == 0 && m == 0 && s == -1)
+            }
+            if ((h == 0 && m == 0 && s == -1 
+                && rb_after.Checked)
+                ||
+                (h == DateTime.Now.Hour
+                && m == DateTime.Now.Minute
+                && s == DateTime.Now.Second 
+                && rb_in.Checked))
+            {
+                start = false;
+                if (ComboBoxAction.SelectedItem.ToString() == "Lock screen")
                 {
-                    start = false;
-                    if (ComboBoxAction.SelectedItem.ToString() == "Lock screen")
-                    {
-
-                    }
-                    if (ComboBoxAction.SelectedItem.ToString() == "Log off")
-                    {
-
-                    }
-                    if (ComboBoxAction.SelectedItem.ToString() == "Suspend")
-                    {
-                        h = 10; m = 10; s = 10;
-                        Application.SetSuspendState(PowerState.Suspend, true, true);
-                    }
-                    if (ComboBoxAction.SelectedItem.ToString() == "Hibernate")
-                    {
-                        h = 10; m = 10; s = 10;
-                        Application.SetSuspendState(PowerState.Hibernate, true, true);
-                    }
-                    if (ComboBoxAction.SelectedItem.ToString() == "Shutdown")
-                    {
-                        System.Diagnostics.Process.Start("cmd", "/c shutdown -s -f -t 00");
-                    }
+                    LockWorkStation();
+                }
+                if (ComboBoxAction.SelectedItem.ToString() == "Log off")
+                {
+                    MessageBox.Show("yeap");
+                }
+                if (ComboBoxAction.SelectedItem.ToString() == "Suspend")
+                {
+                    h = 10; m = 10; s = 10;
+                    Application.SetSuspendState(PowerState.Suspend, true, true);
+                }
+                if (ComboBoxAction.SelectedItem.ToString() == "Hibernate")
+                {
+                    h = 10; m = 10; s = 10;
+                    Application.SetSuspendState(PowerState.Hibernate, true, true);
+                }
+                if (ComboBoxAction.SelectedItem.ToString() == "Shutdown")
+                {
+                    System.Diagnostics.Process.Start("cmd", "/c shutdown -s -f -t 00");
                 }
             }
 
