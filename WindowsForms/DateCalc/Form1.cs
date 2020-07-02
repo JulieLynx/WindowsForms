@@ -23,6 +23,8 @@ namespace DateCalc
             DateTime startDate = dtp1.Value;
             DateTime endDate = dtp2.Value;
             int res = 0;
+            TimeSpan result;
+            result = (endDate - startDate);
 
             //TimeSpan interval = endDate - startDate;
             //MessageBox.Show(interval..ToString(), "Interval");
@@ -43,12 +45,12 @@ namespace DateCalc
             }
             if (radioButton3.Checked)
             {
-                //int buff_m;
-                //int buff_d= 0;
-                //buff_d = endDate.Day - startDate.Day;
-                //buff_m = endDate.Month - startDate.Month;
-                //res = ((((endDate.Year - startDate.Year) * 12) + buff_m)*30) + buff_d;
-                //MessageBox.Show(res.ToString() + " days");
+                MessageBox.Show((Convert.ToInt32(result.TotalDays)).ToString() + " days");
+            }
+            if (radioButton4.Checked)
+            {
+
+               // MessageBox.Show().ToString() + " weeks");
             }
         }
 
