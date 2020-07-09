@@ -1,6 +1,7 @@
 #include<Windows.h>
 #include<string>
 #include"resource.h"
+#include <math.h>
 
 CONST UINT N_BUFFER_SIZE = 256;
 CHAR sz_buffer[N_BUFFER_SIZE]{};
@@ -44,27 +45,29 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		switch (LOWORD(wParam))
 		{/*
 		case IDC_BUTTON(0-9):SendMessage(GetDlgItem(hwnd, IDC_EDIT1), WM_CHAR, 0x3(0-9), 0); break;*/
+#pragma region clear_back_point
 		case IDC_BUTTON_POINT:SendMessage(GetDlgItem(hwnd, IDC_EDIT1), WM_CHAR, 46, 0); break;
 		case IDC_BUTTON_BACK:SendMessage(GetDlgItem(hwnd, IDC_EDIT1), WM_CHAR, 8, 0); break;
 		case IDC_BUTTON_CLEAR:
 		{
-			//LPCSTR tx = "";
-			HWND   hwndEdit1 = GetDlgItem(hwnd, IDC_EDIT1);
-			SetWindowText(hwndEdit1, "");
+			SetWindowText(GetDlgItem(hwnd, IDC_EDIT1), "");
 			a = b = 0;
-			//SendMessage(GetDlgItem(hwnd, IDC_EDIT1),  = ""); break;
 		}
+#pragma endregion
+#pragma region sqrt_pow2_pown
+
 		case IDC_BUTTON_SQRT:
 		{
 			if (s)SendMessage(hwnd, WM_COMMAND, IDC_BUTTON_RESULT, 0);
-			s = 'pow2';
+			s = 'sqrt';
+			GetNumber();
 		}
 		break;
 		case IDC_BUTTON_POW2:
 		{
 			if (s)SendMessage(hwnd, WM_COMMAND, IDC_BUTTON_RESULT, 0);
 			s = 'pow2';
-		
+			GetNumber();
 		}
 		break;
 		case IDC_BUTTON_POWN:
@@ -74,6 +77,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			GetNumber();
 		}
 		break;
+#pragma endregion
 #pragma region sign
 
 		case IDC_BUTTON_PLUS:
@@ -108,13 +112,27 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			{
 			case '+': a += b; break;
 			case '-': a -= b; break;
-			case '*': a *= b; break;
+			case '*': a = a * b; break;
 			case '/': a /= b; break;
+			case 'sqrt':
+			{
+				a = sqrt(a);
+			}
+			break;
+			case 'pow2':
+			{
+				a = pow(a,2);
+			/*	int buf = a;
+				for (int i = 0; i < 2; i++) { buf *= a; }
+				a = buf;*/
+			}
+			break;
 			case 'pown':
 			{
-				int buf = a;
+				a = pow(a, b);
+				/*int buf = a;
 				for (int i = 0; i < b-1; i++) { buf *= a; }
-				a = buf;
+				a = buf;*/
 			}
 			break;
 			}
