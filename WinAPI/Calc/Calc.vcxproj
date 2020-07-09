@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{0F2BD945-CDF9-4368-A416-4D74E009F2DA}</ProjectGuid>
+    <ProjectGuid>{BF6AFFD0-7ED4-4C3D-A404-6E9267F06DC1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Calc</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
@@ -149,7 +149,7 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Calc.rc" />
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
